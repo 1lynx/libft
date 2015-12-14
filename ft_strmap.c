@@ -14,17 +14,19 @@
 
 char	*ft_strmap(char const *s, char (*f)(char))
 {
-	int		i;
-	char	*ptr;
+	size_t	i;
+	char	*fresh;
 
-	i = 0;
-	ptr = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
-	if (ptr == NULL)
+	if (!s || !f)
 		return (NULL);
+	fresh = ft_strnew(ft_strlen(s));
+	if (!fresh)
+		return (NULL);
+	i = 0;
 	while (s[i])
 	{
-		ptr[i] = f(s[i]);
+		fresh[i] = (*f)(s[i]);
 		i++;
 	}
-	return (ptr);
+	return (fresh);
 }

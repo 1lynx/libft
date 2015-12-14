@@ -12,31 +12,51 @@
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+static int		ft_debut(char const *s)
 {
-	char	*str;
-	int		i;
-	int		j;
-	int		k;
+	size_t		i;
 
 	i = 0;
-	k = -1;
-	if (s == NULL)
-		return (0);
-	j = ft_strlen(s);
-	str = (char *)malloc(sizeof(*str) * j + 1);
-	ft_bzero(str, j + 1);
-	if (str == NULL)
-		return (NULL);
-	while ((s[i] == ' ' || s[i] == '\t' || s[i] == '\n') && s[i] != '\0')
+	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' ||
+		s[i] == '\r' || s[i] == '\v' || s[i] == '\f')
 		i++;
-	while (s[j] == ' ' || s[j] == '\t' || s[j] == '\n' || s[j] == '\0')
-		j--;
+	return (i);
+}
+
+static int		ft_fin(char const *s)
+{
+	size_t		i;
+
+	i = ft_strlen(s) - 1;
+	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n' ||
+		s[i] == '\r' || s[i] == '\v' || s[i] == '\f')
+		i--;
+	return (i);
+}
+
+char			*ft_strtrim(char const *s)
+{
+	size_t		i;
+	size_t		j;
+	size_t		k;
+	char		*pt;
+
+	i = ft_debut(s);
+	j = ft_fin(s);
+	if (ft_strlen(s) == 0 || i == ft_strlen(s))
+		return ("");
+	if (s[i] == '\0')
+		return (0);
+	pt = (char *)malloc(sizeof(char) * (j - i + 1));
+	if (pt == NULL)
+		return (NULL);
+	k = 0;
 	while (i <= j)
 	{
-		str[++k] = s[i];
+		pt[k] = s[i];
 		i++;
+		k++;
 	}
-	str[++k] = '\0';
-	return (str);
+	pt[k] = '\0';
+	return (pt);
 }
