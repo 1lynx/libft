@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: cchampda <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/12/01 12:55:53 by cchampda          #+#    #+#              #
-#    Updated: 2015/12/01 12:55:59 by cchampda         ###   ########.fr        #
+#    Updated: 2016/07/19 14:19:53 by cchampda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 	  ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c \
 	  ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c \
 	  ft_strsplit.c ft_itoa.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c \
-	  ft_lstiter.c ft_lstmap.c ft_lstnew.c \
+	  ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_strnjoin.c ft_strndup.c\
 
 OBJ = $(SRC:.c=.o)
 

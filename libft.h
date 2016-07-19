@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchampda <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: cchampda <cchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/01 12:04:22 by cchampda          #+#    #+#             */
-/*   Updated: 2015/12/08 17:29:33 by cchampda         ###   ########.fr       */
+/*   Updated: 2016/07/19 14:18:40 by cchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,9 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+char				*ft_strnjoin(const char *s1, const char *s2, size_t len);
+char				*ft_strndup(const char *s1, size_t n);
+
 
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
